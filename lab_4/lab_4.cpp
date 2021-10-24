@@ -173,7 +173,7 @@ void FunckForStreet() {
 		} while (option > 4 || option <= 0);
 
 		if (option == 1) {
-			street_1->StreetСompletion_console();
+			street_1->Set_console();
 		}
 		else if (option == 2) {
 			memset(&streetName, 0, sizeof(streetName));
@@ -182,10 +182,10 @@ void FunckForStreet() {
 			printf("\nУлица: "); scanf("%s", &streetName); while (getchar() != '\n');
 			printf("Описание улици: "); gets_s(streetDescription, 150);
 
-			street_1->StreetСompletion(streetName, streetDescription);
+			street_1->Set(streetName, streetDescription);
 		}
 		else if (option == 3) {
-			street_1->StreetView();
+			street_1->Print();
 		}
 
 	} while (option != 4);
