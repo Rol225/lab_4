@@ -60,7 +60,7 @@ void FunckForLocation() {
 		} while (option > 4 || option <= 0);
 
 		if (option == 1) {
-			location_1->LocationСompletion_console();
+			location_1->Set_console();
 		}
 		else if (option == 2) {
 			printf("\nВыберите расстояние до школы: ");
@@ -89,11 +89,11 @@ void FunckForLocation() {
 
 			printf("\nУлица: "); scanf("%s", &houseStreet); while (getchar() != '\n');
 
-			location_1->LocationСompletion(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
+			location_1->Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
 		}
 		else if (option == 3) {
 			printf("\n");
-			location_1->LocationViwe();
+			location_1->Print();
 		}
 	} while (option != 4);
 

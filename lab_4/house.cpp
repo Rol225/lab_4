@@ -4,7 +4,7 @@
 
 void house::Set(int distanceSchool, int distanceHospital, int distanceKindergarten, char houseStreet[30], int numHouse, int coin, int countRoom, int numFlat, char streetDescription[150])
 {
-	location.LocationСompletion(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
+	location.Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
 	flat.Set(coin, countRoom, numFlat);
 	street.StreetСompletion(houseStreet, streetDescription);
 }
@@ -63,7 +63,7 @@ void house::Set_console()
 	printf("\nУлица: "); scanf("%s", &houseStreet); while (getchar() != '\n');
 	printf("Описание улици: "); gets_s(streetDescription, 150);
 
-	location.LocationСompletion(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
+	location.Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
 	flat.Set(coin, countRoom, numFlat);
 	street.StreetСompletion(houseStreet, streetDescription);
 
@@ -73,11 +73,11 @@ void house::Set_console()
 void house::Print()
 {
 	int test = 0;
-	printf("\n  Адрес: %s, дом %d\n", location.Out_houseStreet(), location.Out_numHouse());
+	printf("\n  Адрес: %s, дом %d\n", location.Get_house_street(), location.Get_num_house());
 	printf("  Номер квартиры: %d\n",flat.Get_num_flat());
-	printf("  Расстояние до школы: %d км\n", location.Out_distanceSchool());
-	printf("  Расстояние до больницы: %d км\n", location.Out_distanceHospital());
-	printf("  Расстояние до детского сада: %d км\n", location.Out_distanceKindergarten());
+	printf("  Расстояние до школы: %d км\n", location.Get_distance_school());
+	printf("  Расстояние до больницы: %d км\n", location.Get_distance_hospital());
+	printf("  Расстояние до детского сада: %d км\n", location.Get_distance_kindergarten());
 	printf("  Кол-во комнат: %d\n",flat.Get_count_room());
 	printf("  Цена: %d рублей\n", flat.Get_coin());
 	printf("  Информация о улице: %s\n", street.Out_streetDescription());
