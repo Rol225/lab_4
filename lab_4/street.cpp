@@ -2,16 +2,27 @@
 #include "street.h"
 #include <iostream>
 
-void street::StreetÑompletion(char streetName_2[], char streetDescription_2[])
+void street::Set(char streetName_2[], char streetDescription_2[])
 {
 	memset(&streetName, 0, sizeof(streetName));
 	memset(&streetDescription, 0, sizeof(streetDescription));
 
-	strcat(streetName, streetName_2);
-	strcat(streetDescription, streetDescription_2);
+	if (streetName_2 != nullptr) {
+		strcat(streetName, streetName_2);
+	}
+	else {
+		strcat(streetName, "Error");
+	}
+	if (streetName_2 != nullptr) {
+		strcat(streetDescription, streetDescription_2);
+	}
+	else {
+		strcat(streetDescription, "Error");
+	}
+	
 }
 
-void street::StreetÑompletion_console()
+void street::Set_console()
 {
 	memset(&streetName, 0, sizeof(streetName));
 	memset(&streetDescription, 0, sizeof(streetDescription));
@@ -20,18 +31,18 @@ void street::StreetÑompletion_console()
 	printf("Îïèñàíèå óëèöè: "); gets_s(streetDescription, 150);
 }
 
-void street::StreetView()
+void street::Print()
 {
 	printf("\n  Óëèöà: %s\n", streetName);
 	printf("  Îïèñàíèå óëèöû: %s\n", streetDescription);
 }
 
-char* street::Out_streetName()
+char* street::Get_street_name()
 {
 	return streetName;
 }
 
-char* street::Out_streetDescription()
+char* street::Get_street_description()
 {
 	return streetDescription;
 }

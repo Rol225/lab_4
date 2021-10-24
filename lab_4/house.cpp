@@ -6,7 +6,7 @@ void house::Set(int distanceSchool, int distanceHospital, int distanceKindergart
 {
 	location.Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
 	flat.Set(coin, countRoom, numFlat);
-	street.StreetСompletion(houseStreet, streetDescription);
+	street.Set(houseStreet, streetDescription);
 }
 
 void house::Set_console()
@@ -65,7 +65,7 @@ void house::Set_console()
 
 	location.Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
 	flat.Set(coin, countRoom, numFlat);
-	street.StreetСompletion(houseStreet, streetDescription);
+	street.Set(houseStreet, streetDescription);
 
 	
 }
@@ -80,5 +80,5 @@ void house::Print()
 	printf("  Расстояние до детского сада: %d км\n", location.Get_distance_kindergarten());
 	printf("  Кол-во комнат: %d\n",flat.Get_count_room());
 	printf("  Цена: %d рублей\n", flat.Get_coin());
-	printf("  Информация о улице: %s\n", street.Out_streetDescription());
+	printf("  Информация о улице: %s\n", street.Get_street_description());
 }
