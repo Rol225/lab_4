@@ -1,0 +1,84 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include "house.h"
+#include <iostream>
+
+void house::HouseСompletion(int distanceSchool, int distanceHospital, int distanceKindergarten, char houseStreet[30], int numHouse, int coin, int countRoom, int numFlat, char streetDescription[150])
+{
+	location.LocationСompletion(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
+	flat.FlatСompletion(coin, countRoom, numFlat);
+	street.StreetСompletion(houseStreet, streetDescription);
+}
+
+void house::HouseСompletion_console()
+{
+	int distanceSchool, distanceHospital, distanceKindergarten, numHouse, coin, countRoom, numFlat;
+	char streetDescription[150];
+	char houseStreet[30];
+
+	memset(&streetDescription, 0, sizeof(streetDescription));
+	memset(&houseStreet, 0, sizeof(houseStreet));
+
+	printf("\nВыберите расстояние до школы: ");
+	while (scanf("%d", &distanceSchool) != 1) {
+		while (getchar() != '\n');
+		printf("Ошибка. Введите число: ");
+	}
+
+	printf("Выберите расстояние до больницы: ");
+	while (scanf("%d", &distanceHospital) != 1) {
+		while (getchar() != '\n');
+		printf("Ошибка. Введите число: ");
+	}
+
+	printf("Выберите расстояние до детского сада: ");
+	while (scanf("%d", &distanceKindergarten) != 1) {
+		while (getchar() != '\n');
+		printf("Ошибка. Введите число: ");
+	}
+
+	printf("Выберите стоимость квартиры: ");
+	while (scanf("%d", &coin) != 1) {
+		while (getchar() != '\n');
+		printf("Ошибка. Введите число: ");
+	}
+
+	printf("Выберите кол-во комнат: ");
+	while (scanf("%d", &countRoom) != 1) {
+		while (getchar() != '\n');
+		printf("Ошибка. Введите число: ");
+	}
+
+	printf("Номер дома: ");
+	while (scanf("%d", &numHouse) != 1) {
+		while (getchar() != '\n');
+		printf("Ошибка. Введите число: ");
+	}
+
+	printf("Номер квартиры: ");
+	while (scanf("%d", &numFlat) != 1) {
+		while (getchar() != '\n');
+		printf("Ошибка. Введите число: ");
+	}
+
+	printf("\nУлица: "); scanf("%s", &houseStreet); while (getchar() != '\n');
+	printf("Описание улици: "); gets_s(streetDescription, 150);
+
+	location.LocationСompletion(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
+	flat.FlatСompletion(coin, countRoom, numFlat);
+	street.StreetСompletion(houseStreet, streetDescription);
+
+	
+}
+
+void house::House_view()
+{
+	int test = 0;
+	printf("\n  Адрес: %s, дом %d\n", location.Out_houseStreet(), location.Out_numHouse());
+	printf("  Номер квартиры: %d\n",flat.Get_num_flat());
+	printf("  Расстояние до школы: %d км\n", location.Out_distanceSchool());
+	printf("  Расстояние до больницы: %d км\n", location.Out_distanceHospital());
+	printf("  Расстояние до детского сада: %d км\n", location.Out_distanceKindergarten());
+	printf("  Кол-во комнат: %d\n",flat.Get_count_room());
+	printf("  Цена: %d рублей\n", flat.Get_coin());
+	printf("  Информация о улице: %s\n", street.Out_streetDescription());
+}
