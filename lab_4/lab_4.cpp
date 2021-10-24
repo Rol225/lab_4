@@ -120,7 +120,7 @@ void FunckForFlat() {
 		} while (option > 4 || option <= 0);
 
 		if (option == 1) {
-			flat_1->FlatСompletion_console();
+			flat_1->Set_console();
 		}
 		else if (option == 2) {
 			printf("\nВыберите стоимость квартиры: ");
@@ -141,10 +141,10 @@ void FunckForFlat() {
 				printf("Ошибка. Введите число: ");
 			}
 
-			flat_1->FlatСompletion(coin, countRoom, numFlat);
+			flat_1->Set(coin, countRoom, numFlat);
 		}
 		else if (option == 3) {
-			flat_1->FlatViwe();
+			flat_1->Print();
 		}
 
 	} while (option != 4);
@@ -216,7 +216,7 @@ void FunckForHouse()
 		} while (option > 4 || option <= 0);
 
 		if (option == 1) {
-			house_1->HouseСompletion_console();
+			house_1->Set_console();
 		}
 		else if (option == 2) {
 
@@ -265,10 +265,10 @@ void FunckForHouse()
 			printf("\nУлица: "); scanf("%s", &houseStreet); while (getchar() != '\n');
 			printf("Описание улици: "); gets_s(streetDescription, 150);
 
-			house_1->HouseСompletion(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse, coin, countRoom, numFlat, streetDescription);
+			house_1->Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse, coin, countRoom, numFlat, streetDescription);
 		}
 		else if (option == 3) {
-			house_1->House_view();
+			house_1->Print();
 		}
 
 	} while (option != 4);

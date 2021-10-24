@@ -2,14 +2,14 @@
 #include "house.h"
 #include <iostream>
 
-void house::House—ompletion(int distanceSchool, int distanceHospital, int distanceKindergarten, char houseStreet[30], int numHouse, int coin, int countRoom, int numFlat, char streetDescription[150])
+void house::Set(int distanceSchool, int distanceHospital, int distanceKindergarten, char houseStreet[30], int numHouse, int coin, int countRoom, int numFlat, char streetDescription[150])
 {
 	location.Location—ompletion(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
-	flat.Flat—ompletion(coin, countRoom, numFlat);
+	flat.Set(coin, countRoom, numFlat);
 	street.Street—ompletion(houseStreet, streetDescription);
 }
 
-void house::House—ompletion_console()
+void house::Set_console()
 {
 	int distanceSchool, distanceHospital, distanceKindergarten, numHouse, coin, countRoom, numFlat;
 	char streetDescription[150];
@@ -64,13 +64,13 @@ void house::House—ompletion_console()
 	printf("ŒÔËÒ‡ÌËÂ ÛÎËˆË: "); gets_s(streetDescription, 150);
 
 	location.Location—ompletion(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
-	flat.Flat—ompletion(coin, countRoom, numFlat);
+	flat.Set(coin, countRoom, numFlat);
 	street.Street—ompletion(houseStreet, streetDescription);
 
 	
 }
 
-void house::House_view()
+void house::Print()
 {
 	int test = 0;
 	printf("\n  ¿‰ÂÒ: %s, ‰ÓÏ %d\n", location.Out_houseStreet(), location.Out_numHouse());
