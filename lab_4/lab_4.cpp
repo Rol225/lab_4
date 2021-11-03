@@ -200,6 +200,9 @@ void FunckForHouse()
 	char houseStreet[30];
 
 	house* house_1 = new house;
+	street* street_new = new street;
+	flat* flat_new = new flat;
+	location* location_new = new location;
 
 	int option = 0;
 	do {
@@ -265,7 +268,11 @@ void FunckForHouse()
 			printf("\nУлица: "); scanf("%s", &houseStreet); while (getchar() != '\n');
 			printf("Описание улици: "); gets_s(streetDescription, 150);
 
-			house_1->Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse, coin, countRoom, numFlat, streetDescription);
+			location_new->Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
+			flat_new->Set(coin, countRoom, numFlat);
+			street_new->Set(houseStreet, streetDescription);
+
+			house_1->Set(street_new, flat_new, location_new);
 		}
 		else if (option == 3) {
 			house_1->Print();
@@ -274,4 +281,7 @@ void FunckForHouse()
 	} while (option != 4);
 
 	delete house_1;
+	delete location_new;
+	delete flat_new;
+	delete street_new;
 }
