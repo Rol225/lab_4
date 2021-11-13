@@ -12,8 +12,8 @@ void house::Set(street *street_new, flat *flat_new, location *location_new)
 void house::Set_console()
 {
 	int distanceSchool, distanceHospital, distanceKindergarten, numHouse, coin, countRoom, numFlat;
-	char streetDescription[150];
-	char houseStreet[30];
+	std::string streetDescription;
+	std::string houseStreet;
 
 	memset(&streetDescription, 0, sizeof(streetDescription));
 	memset(&houseStreet, 0, sizeof(houseStreet));
@@ -61,7 +61,7 @@ void house::Set_console()
 	}
 
 	printf("\nУлица: "); scanf("%s", &houseStreet); while (getchar() != '\n');
-	printf("Описание улици: "); gets_s(streetDescription, 150);
+	printf("Описание улици: "); scanf("%s", &streetDescription); while (getchar() != '\n');
 
 	Location.Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
 	Flat.Set(coin, countRoom, numFlat);

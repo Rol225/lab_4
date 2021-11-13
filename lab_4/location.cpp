@@ -2,7 +2,7 @@
 #include "location.h"
 #include <iostream>
 
-void location::Set(int distanceSchool_2, int distanceHospital_2, int distanceKindergarten_2, char houseStreet_2[30], int numHouse_2)
+void location::Set(int distanceSchool_2, int distanceHospital_2, int distanceKindergarten_2, std::string houseStreet_2, int numHouse_2)
 {
 	memset(&houseStreet, 0, sizeof(houseStreet));
 
@@ -30,11 +30,11 @@ void location::Set(int distanceSchool_2, int distanceHospital_2, int distanceKin
 	else {
 		numHouse = numHouse_2;
 	}
-	if (houseStreet_2 != nullptr) {
-		strcat(houseStreet, houseStreet_2);
+	if (houseStreet_2[0] != '\0') {
+		houseStreet = houseStreet_2;
 	}
 	else {
-		strcat(houseStreet, "Error");
+		houseStreet = "Error";
 	}
 	
 }
@@ -108,7 +108,7 @@ int location::Get_num_house()
 	return numHouse;
 }
 
-char* location::Get_house_street()
+std::string location::Get_house_street()
 {
 	return houseStreet;
 }

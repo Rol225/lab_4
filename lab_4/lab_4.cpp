@@ -41,7 +41,7 @@ int main()
 void FunckForLocation() {
 
 	int distanceSchool, distanceHospital, distanceKindergarten, numHouse;
-	char houseStreet[30];
+	std::string houseStreet;
 	int option = 0;
 
 	location* location_1 = new location;
@@ -64,28 +64,37 @@ void FunckForLocation() {
 		}
 		else if (option == 2) {
 			printf("\nВыберите расстояние до школы: ");
-			while (scanf("%d", &distanceSchool) != 1) {
-				while (getchar() != '\n');
-				printf("Ошибка. Введите число: ");
-			}
+			do {
+				while (scanf("%d", &distanceSchool) != 1) {
+					while (getchar() != '\n');
+					printf("Ошибка. Введите число: ");
+				}
+			} while (distanceSchool <= 0);
 
 			printf("Выберите расстояние до больницы: ");
-			while (scanf("%d", &distanceHospital) != 1) {
-				while (getchar() != '\n');
-				printf("Ошибка. Введите число: ");
-			}
+			do {
+				while (scanf("%d", &distanceHospital) != 1) {
+					while (getchar() != '\n');
+					printf("Ошибка. Введите число: ");
+				}
+			} while (distanceHospital <= 0);
+
 
 			printf("Выберите расстояние до детского сада: ");
-			while (scanf("%d", &distanceKindergarten) != 1) {
-				while (getchar() != '\n');
-				printf("Ошибка. Введите число: ");
-			}
+			do {
+				while (scanf("%d", &distanceKindergarten) != 1) {
+					while (getchar() != '\n');
+					printf("Ошибка. Введите число: ");
+				}
+			} while (distanceKindergarten <= 0);
 
 			printf("Номер дома: ");
-			while (scanf("%d", &numHouse) != 1) {
-				while (getchar() != '\n');
-				printf("Ошибка. Введите число: ");
-			}
+			do {
+				while (scanf("%d", &numHouse) != 1) {
+					while (getchar() != '\n');
+					printf("Ошибка. Введите число: ");
+				}
+			} while (numHouse <= 0);
 
 			printf("\nУлица: "); scanf("%s", &houseStreet); while (getchar() != '\n');
 
@@ -153,8 +162,8 @@ void FunckForFlat() {
 }
 
 void FunckForStreet() {
-	char streetName[30] = { 0 };
-	char streetDescription[150] = { 0 };
+	std::string streetName;
+	std::string streetDescription;
 
 	street* street_1 = new street;
 
@@ -180,7 +189,7 @@ void FunckForStreet() {
 			memset(&streetDescription, 0, sizeof(streetDescription));
 
 			printf("\nУлица: "); scanf("%s", &streetName); while (getchar() != '\n');
-			printf("Описание улици: "); gets_s(streetDescription, 150);
+			printf("Описание улици: "); scanf("%s", &streetDescription); while (getchar() != '\n');
 
 			street_1->Set(streetName, streetDescription);
 		}
@@ -196,8 +205,8 @@ void FunckForStreet() {
 void FunckForHouse()
 {
 	int distanceSchool, distanceHospital, distanceKindergarten, numHouse, coin, countRoom, numFlat;
-	char streetDescription[150];
-	char houseStreet[30];
+	std::string streetDescription;
+	std::string houseStreet;
 
 	house* house_1 = new house;
 	street* street_new = new street;
@@ -222,8 +231,7 @@ void FunckForHouse()
 			house_1->Set_console();
 		}
 		else if (option == 2) {
-
-			printf("Выберите расстояние до школы: ");
+			printf("\nВыберите расстояние до школы: ");
 			while (scanf("%d", &distanceSchool) != 1) {
 				while (getchar() != '\n');
 				printf("Ошибка. Введите число: ");
@@ -266,7 +274,7 @@ void FunckForHouse()
 			}
 
 			printf("\nУлица: "); scanf("%s", &houseStreet); while (getchar() != '\n');
-			printf("Описание улици: "); gets_s(streetDescription, 150);
+			printf("Описание улици: "); scanf("%s", &streetDescription); while (getchar() != '\n');
 
 			location_new->Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
 			flat_new->Set(coin, countRoom, numFlat);

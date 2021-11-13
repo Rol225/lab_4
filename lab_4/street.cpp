@@ -2,22 +2,22 @@
 #include "street.h"
 #include <iostream>
 
-void street::Set(char streetName_2[], char streetDescription_2[])
+void street::Set(std::string streetName_2, std::string streetDescription_2)
 {
 	memset(&streetName, 0, sizeof(streetName));
 	memset(&streetDescription, 0, sizeof(streetDescription));
 
-	if (streetName_2 != nullptr) {
-		strcat(streetName, streetName_2);
+	if (streetName_2[0] != '\0') {
+		streetName = streetName_2;
 	}
 	else {
-		strcat(streetName, "Error");
+		streetName = "Error";
 	}
-	if (streetName_2 != nullptr) {
-		strcat(streetDescription, streetDescription_2);
+	if (streetName_2[0] != '\0') {
+		streetDescription = streetDescription_2;
 	}
 	else {
-		strcat(streetDescription, "Error");
+		streetDescription = "Error";
 	}
 	
 }
@@ -28,7 +28,7 @@ void street::Set_console()
 	memset(&streetDescription, 0, sizeof(streetDescription));
 
 	printf("\nУлица: "); scanf("%s", &streetName); while (getchar() != '\n');
-	printf("Описание улици: "); gets_s(streetDescription, 150);
+	printf("Описание улици: "); scanf("%s", &streetDescription); while (getchar() != '\n');
 }
 
 void street::Print()
@@ -37,12 +37,12 @@ void street::Print()
 	printf("  Описание улицы: %s\n", streetDescription);
 }
 
-char* street::Get_street_name()
+std::string street::Get_street_name()
 {
 	return streetName;
 }
 
-char* street::Get_street_description()
+std::string street::Get_street_description()
 {
 	return streetDescription;
 }
