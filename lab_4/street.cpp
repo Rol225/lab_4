@@ -8,16 +8,16 @@ void street::Set(std::string streetName_2, std::string streetDescription_2)
 	memset(&streetDescription, 0, sizeof(streetDescription));
 
 	if (streetName_2[0] != '\0') {
-		streetName = streetName_2;
+		this->streetName = streetName_2;
 	}
 	else {
-		streetName = "Error";
+		this->streetName = "Error";
 	}
 	if (streetName_2[0] != '\0') {
-		streetDescription = streetDescription_2;
+		this->streetDescription = streetDescription_2;
 	}
 	else {
-		streetDescription = "Error";
+		this->streetDescription = "Error";
 	}
 	
 }
