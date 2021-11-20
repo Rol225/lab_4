@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 class flat
 {
 private:
@@ -14,4 +15,3 @@ public:
 	int Get_count_room();
 	int Get_num_flat();
 };
-

@@ -76,7 +76,7 @@ void location::Set_console()
 		}
 	} while (numHouse <= 0);
 	
-	printf("\nУлица: "); scanf("%s", &houseStreet); while (getchar() != '\n');
+	printf("\nУлица: "); std::cin >> houseStreet;
 }
 
 void location::Print()
@@ -84,31 +84,12 @@ void location::Print()
 	printf("\n  Расстояние до школы: %d\n", distanceSchool);
 	printf("  Расстояние до больницы: %d\n", distanceHospital);
 	printf("  Расстояние до детскогосада: %d\n", distanceKindergarten);
-	printf("  Название улицы: %s\n", houseStreet);
+	printf("  Название улицы: "); std::cin >> houseStreet;
 	printf("  Номер дома: %d\n", numHouse);
-}
-
-int location::Get_distance_school()
-{
-	return distanceSchool;
-}
-
-int location::Get_distance_hospital()
-{
-	return distanceHospital;
-}
-
-int location::Get_distance_kindergarten()
-{
-	return distanceKindergarten;
-}
-
-int location::Get_num_house()
-{
-	return numHouse;
 }
 
 std::string location::Get_house_street()
 {
 	return houseStreet;
 }
+

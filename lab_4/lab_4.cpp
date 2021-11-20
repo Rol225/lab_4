@@ -1,6 +1,7 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include "lab_4.h"
 #include "house.h"
+#include <string>
 
 int main()
 {
@@ -96,7 +97,7 @@ void FunckForLocation() {
 				}
 			} while (numHouse <= 0);
 
-			printf("\nУлица: "); scanf("%s", &houseStreet); while (getchar() != '\n');
+			printf("\nУлица: "); std::cin >> houseStreet;
 
 			location_1->Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
 		}
@@ -188,8 +189,8 @@ void FunckForStreet() {
 			memset(&streetName, 0, sizeof(streetName));
 			memset(&streetDescription, 0, sizeof(streetDescription));
 
-			printf("\nУлица: "); scanf("%s", &streetName); while (getchar() != '\n');
-			printf("Описание улици: "); scanf("%s", &streetDescription); while (getchar() != '\n');
+			printf("\nУлица: "); std::cin >> streetName;
+			printf("Описание улици: "); std::cin >> streetDescription;
 
 			street_1->Set(streetName, streetDescription);
 		}

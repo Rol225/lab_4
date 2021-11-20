@@ -60,8 +60,8 @@ void house::Set_console()
 		printf("Ошибка. Введите число: ");
 	}
 
-	printf("\nУлица: "); scanf("%s", &houseStreet); while (getchar() != '\n');
-	printf("Описание улици: "); scanf("%s", &streetDescription); while (getchar() != '\n');
+	printf("\nУлица: "); std::cin >> houseStreet;
+	printf("Описание улици: "); std::cin >> streetDescription;
 
 	Location.Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
 	Flat.Set(coin, countRoom, numFlat);
@@ -70,15 +70,22 @@ void house::Set_console()
 	
 }
 
+int* Int_value_location(location& location)
+{
+	int mas[] = { location.distanceSchool, location.distanceHospital, location.distanceSchool, location.numHouse };
+	return mas;
+}
+
 void house::Print()
 {
 	int test = 0;
-	printf("\n  Адрес: %s, дом %d\n", Location.Get_house_street(), Location.Get_num_house());
+	int* mas = Int_value_location(Location);
+	std::cout << "\n  Адрес: " << Location.Get_house_street() << ", дом " << mas[3] << std::endl;
 	printf("  Номер квартиры: %d\n",Flat.Get_num_flat());
-	printf("  Расстояние до школы: %d км\n", Location.Get_distance_school());
-	printf("  Расстояние до больницы: %d км\n", Location.Get_distance_hospital());
-	printf("  Расстояние до детского сада: %d км\n", Location.Get_distance_kindergarten());
+	std::cout << "  Расстояние до школы: " << mas[2] << " км" << std::endl;
+	std::cout << "  Расстояние до больницы: " << mas[1] << " км" << std::endl;
+	std::cout << "  Расстояние до детского сада: " << mas[0] << " км" << std::endl;
 	printf("  Кол-во комнат: %d\n",Flat.Get_count_room());
 	printf("  Цена: %d рублей\n", Flat.Get_coin());
-	printf("  Информация о улице: %s\n", Street.Get_street_description());
+	std::cout << "  Информация о улице: " << Street.Get_street_description() << std::endl;
 }

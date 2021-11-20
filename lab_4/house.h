@@ -2,6 +2,7 @@
 #include "flat.h"
 #include "location.h"
 #include "street.h"
+#include <string>
 
 class house
 {

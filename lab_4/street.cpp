@@ -24,17 +24,14 @@ void street::Set(std::string streetName_2, std::string streetDescription_2)
 
 void street::Set_console()
 {
-	memset(&streetName, 0, sizeof(streetName));
-	memset(&streetDescription, 0, sizeof(streetDescription));
-
-	printf("\nУлица: "); scanf("%s", &streetName); while (getchar() != '\n');
-	printf("Описание улици: "); scanf("%s", &streetDescription); while (getchar() != '\n');
+	printf("\nУлица: "); std::cin >> streetName;
+	printf("Описание улици: "); std::cin >> streetDescription;
 }
 
 void street::Print()
 {
-	printf("\n  Улица: %s\n", streetName);
-	printf("  Описание улицы: %s\n", streetDescription);
+	std::cout << "\n  Улица:" << streetName << std::endl;
+	std::cout << "  Описание улици: " << streetDescription;
 }
 
 std::string street::Get_street_name()
