@@ -2,6 +2,21 @@
 #include "house.h"
 #include <iostream>
 
+house::house()
+{
+	this->Flat = *new flat;
+	this->Location = *new location;
+	this->Street = *new street;
+}
+
+house* house::array_houses(int size)
+{
+	return new house[size];
+}
+
+
+
+
 void house::Set(street *street_new, flat *flat_new, location *location_new)
 {
 	this->Location = *location_new;
@@ -72,7 +87,12 @@ void house::Set_console()
 
 int* Int_value_location(location& location)
 {
-	int mas[] = { location.distanceSchool, location.distanceHospital, location.distanceSchool, location.numHouse };
+	static int mas[4];
+	mas[0] = location.distanceKindergarten;
+	mas[1] = location.distanceHospital;
+	mas[2] = location.distanceSchool;
+	mas[3] = location.numHouse;
+
 	return mas;
 }
 
@@ -80,6 +100,7 @@ void house::Print()
 {
 	int test = 0;
 	int* mas = Int_value_location(Location);
+
 	std::cout << "\n  Адрес: " << Location.Get_house_street() << ", дом " << mas[3] << std::endl;
 	printf("  Номер квартиры: %d\n",Flat.Get_num_flat());
 	std::cout << "  Расстояние до школы: " << mas[2] << " км" << std::endl;

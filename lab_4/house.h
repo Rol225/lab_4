@@ -11,6 +11,8 @@ private:
 	location Location;//Расположение дома
 	street Street; //Описание улицы
 public:
+	house(); // Конструктор
+	house* array_houses(int size); // Массив домов
 	void Set(street *street_new, flat *flat_new, location *location_new); // Функция ввода через встроенную функцию
 	void Set_console(); // Функция ввода через внешнюю функцию
 	void Print();  // Функция вывода

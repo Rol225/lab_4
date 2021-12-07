@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 class location
 {
 private:
@@ -10,7 +11,7 @@ private:
 	int numHouse;
 public:
 	//Проверка целого не отрицательного числа
-	friend int* Int_value_location(location& location);
+	friend int* Int_value_location(location& location); // Дружественная функция
 	void Set(int distanceSchool, int distanceHospital, int distanceKindergarten, std::string houseStreet, int numHouse); //Функция ввода через внешнюю функцию
 	void Set_console(); //Функция ввода через встроенную функцию
 	void Print(); //Вывод

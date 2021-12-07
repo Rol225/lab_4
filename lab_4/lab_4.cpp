@@ -2,6 +2,7 @@
 #include "lab_4.h"
 #include "house.h"
 #include <string>
+#include <locale>
 
 int main()
 {
@@ -12,7 +13,7 @@ int main()
 	int option = 0;
 
 	do {
-		printf("  1) Структура location\n  2) Структура flat\n  3) Структура street\n  4) Структура house\n  5) Выход\n");
+		printf("  1) Класс location\n  2) Класс flat\n  3) Класс street\n  4) Класс house\n  5) Массив обьектов класса houses\n  6) Выход\n");
 		printf("Выберите действие: ");
 		do {
 			while (scanf("%d", &option) != 1) {
@@ -36,7 +37,10 @@ int main()
 		else if (option == 4) {
 			FunckForHouse();
 		}
-	} while (option != 5);
+		else if (option == 5) {
+			FunckForHouses();
+		}
+	} while (option != 6);
 }
 
 void FunckForLocation() {
@@ -293,4 +297,41 @@ void FunckForHouse()
 	delete location_new;
 	delete flat_new;
 	delete street_new;
+}
+
+house& get_house(house array[], int index)
+{
+	return array[index];
+}
+
+void FunckForHouses() {
+	int size = 0;
+	int index = 0;
+
+	printf("\n\n  Сколько домов вы хотите создать: ");
+	while (scanf("%d", &size) != 1) {
+		while (getchar() != '\n');
+		printf("Ошибка. Введите число: ");
+	}
+	house* array = new house[size];
+	array->array_houses(size);
+
+	for (int i = 0; i < size; i++) {
+		array[i].Set_console();
+	}
+	printf("\n\n  Все введённые дома: ");
+	for (int i = 0; i < size; i++) {
+		array[i].Print();
+	}
+	printf("\n\n  Какой элемент перезаписать: ");
+	while (scanf("%d", &index) != 1) {
+		while (getchar() != '\n');
+		printf("Ошибка. Введите число: ");
+	}
+	index--;
+	get_house(array, index).Set_console();
+	printf("\n\n  Результат: ");
+	array[index].Print();
+	printf("\n\n");
+	delete[] array;
 }

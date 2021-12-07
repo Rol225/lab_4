@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "location.h"
 #include <iostream>
+#include <string>
 
 void location::Set(int distanceSchool_2, int distanceHospital_2, int distanceKindergarten_2, std::string houseStreet_2, int numHouse_2)
 {
