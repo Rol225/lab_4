@@ -4,9 +4,9 @@
 
 void house::Set(street *street_new, flat *flat_new, location *location_new)
 {
-	Location = *location_new;
-	Flat = *flat_new;
-	Street = *street_new;
+	this->Location = *location_new;
+	this->Flat = *flat_new;
+	this->Street = *street_new;
 }
 
 void house::Set_console()
