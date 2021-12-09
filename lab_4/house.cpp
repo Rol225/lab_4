@@ -2,6 +2,8 @@
 #include "house.h"
 #include <iostream>
 
+int house::countData = 0;
+
 house::house()
 {
 	this->Flat = *new flat;
@@ -15,13 +17,12 @@ house* house::array_houses(int size)
 }
 
 
-
-
 void house::Set(street *street_new, flat *flat_new, location *location_new)
 {
 	this->Location = *location_new;
 	this->Flat = *flat_new;
 	this->Street = *street_new;
+	CountData();
 }
 
 void house::Set_console()
@@ -82,7 +83,7 @@ void house::Set_console()
 	Flat.Set(coin, countRoom, numFlat);
 	Street.Set(houseStreet, streetDescription);
 
-	
+	CountData();
 }
 
 int* Int_value_location(location& location)
@@ -109,4 +110,11 @@ void house::Print()
 	printf("  Кол-во комнат: %d\n",Flat.Get_count_room());
 	printf("  Цена: %d рублей\n", Flat.Get_coin());
 	std::cout << "  Информация о улице: " << Street.Get_street_description() << std::endl;
+}
+
+int house::CountData()
+{
+	countData++;
+	printf("\n  Кол-во домов использованных в базе: %d\n", countData);
+	return countData;
 }
