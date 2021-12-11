@@ -1,14 +1,15 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include "lab_4.h"
 #include "house.h"
-#include <string>
+#include "string"
 #include <locale>
 
 int main()
 {
 	//Подключение Русского языка
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+	//SetConsoleCP(1251);
+	//SetConsoleOutputCP(1251);
+	setlocale(LC_ALL, "Russian");
 
 	int option = 0;
 

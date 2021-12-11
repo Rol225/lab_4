@@ -11,6 +11,30 @@ house::house()
 	this->Street = *new street;
 }
 
+house::house(street* street_new)
+{
+	this->Flat = *new flat;
+	this->Location = *new location;
+	this->Street = *street_new;
+	CountData();
+}
+
+house::house(const house& house_new)
+{
+	this->Flat = house_new.Flat;
+	this->Location = house_new.Location;
+	this->Street = house_new.Street;
+	CountData();
+}
+
+house::house(street* street_new, flat* flat_new, location* location_new)
+{
+	this->Location = *location_new;
+	this->Flat = *flat_new;
+	this->Street = *street_new;
+	CountData();
+}
+
 house* house::array_houses(int size)
 {
 	return new house[size];
@@ -76,8 +100,10 @@ void house::Set_console()
 		printf("Ошибка. Введите число: ");
 	}
 
-	printf("\nУлица: "); std::cin >> houseStreet;
-	printf("Описание улици: "); std::cin >> streetDescription;
+	printf("\nУлица: ");
+	getline(std::cin, houseStreet, '\n');
+	printf("Описание улици: ");
+	getline(std::cin, streetDescription, '\n');
 
 	Location.Set(distanceSchool, distanceHospital, distanceKindergarten, houseStreet, numHouse);
 	Flat.Set(coin, countRoom, numFlat);

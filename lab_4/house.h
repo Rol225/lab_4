@@ -13,6 +13,9 @@ private:
 	static int countData; // Кол-во домов в базе
 public:
 	house(); // Конструктор
+	house(street* street_new, flat* flat_new, location* location_new); // Конструктор с параметрами
+	house(street* street_new); // Конструктор с одним параметром
+	house(const house& house_new); // Конструктор копирования
 	house* array_houses(int size); // Массив домов
 	void Set(street *street_new, flat *flat_new, location *location_new); // Функция ввода через встроенную функцию
 	void Set_console(); // Функция ввода через внешнюю функцию

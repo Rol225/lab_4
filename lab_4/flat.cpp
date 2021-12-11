@@ -2,6 +2,47 @@
 #include "flat.h"
 #include <iostream>
 
+flat::flat()
+{
+	this->coin = 0;
+	this->countRoom = 0;
+	this->numFlat = 0;
+}
+
+flat::flat(int numFlat_2)
+{
+	this->coin = 0;
+	this->countRoom = 0;
+	if (numFlat_2 <= 0) {
+		this->numFlat = 0;
+	}
+	else {
+		this->numFlat = numFlat_2;
+	}
+}
+
+flat::flat(int coin_2, int countRoom_2, int numFlat_2)
+{
+	if (coin_2 <= 0) {
+		this->coin = 0;
+	}
+	else {
+		this->coin = coin_2;
+	}
+	if (countRoom_2 <= 0) {
+		this->countRoom = 0;
+	}
+	else {
+		this->countRoom = countRoom_2;
+	}
+	if (numFlat_2 <= 0) {
+		this->numFlat = 0;
+	}
+	else {
+		this->numFlat = numFlat_2;
+	}
+}
+
 void flat::Set(int coin_2, int countRoom_2, int numFlat_2)
 {
 	if (coin_2 <= 0) {
@@ -22,7 +63,6 @@ void flat::Set(int coin_2, int countRoom_2, int numFlat_2)
 	else{
 		this->numFlat = numFlat_2;
 	}
-	
 }
 
 void flat::Set_console()

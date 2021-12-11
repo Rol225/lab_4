@@ -7,6 +7,9 @@ private:
 	int countRoom; //кол-во комнат
 	int numFlat; //Номер квартиры
 public:
+	flat(); // Конструктор
+	flat(int numFlat); // Конструктор с одним параметром
+	flat(int coin_2, int countRoom_2, int numFlat_2); // Конструктор со всеми параметрами
 	void Set(int coin_2, int countRoom_2, int numFlat_2); // Функция ввода через внешнюю функцию
 	void Set_console();  // Функция ввода через встроенную функцию
 	void Print(); // Функция вывода

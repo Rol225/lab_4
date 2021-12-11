@@ -10,6 +10,9 @@ private:
 	std::string houseStreet; //адрес дома
 	int numHouse;
 public:
+	location(); // Конструктор
+	location(int numHouse); // Конструктор c одним параметром
+	location(int distanceSchool, int distanceHospital, int distanceKindergarten, std::string houseStreet, int numHouse); // Конструктор со всеми параметрами
 	//Проверка целого не отрицательного числа
 	friend int* Int_value_location(location& location); // Дружественная функция
 	void Set(int distanceSchool, int distanceHospital, int distanceKindergarten, std::string houseStreet, int numHouse); //Функция ввода через внешнюю функцию
