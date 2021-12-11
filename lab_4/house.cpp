@@ -27,6 +27,15 @@ house::house(const house& house_new)
 	CountData();
 }
 
+house& house::operator=(const house& house_new)
+{
+	if (this != &house_new) {
+		this->Location = *new location;
+		this->Location = house_new.Location;
+	}
+	return *this;
+}
+
 house::house(street* street_new, flat* flat_new, location* location_new)
 {
 	this->Location = *location_new;
