@@ -18,47 +18,100 @@ location::location(int numHouse_new)
 	this->distanceKindergarten = 0;
 	this->distanceSchool = 0;
 	this->houseStreet = "";
-	if (numHouse_new <= 0) {
-		this->numHouse = 0;
+	try
+	{
+		if (numHouse_new <= 0) {
+			this->numHouse = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->numHouse = numHouse_new;
+		}
 	}
-	else {
-		this->numHouse = numHouse_new;
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
 }
 
 location::location(int distanceSchool_new, int distanceHospital_new, int distanceKindergarten_new, std::string houseStreet_new, int numHouse_new)
 {
 	memset(&houseStreet, 0, sizeof(houseStreet));
-
-	if (distanceSchool_new <= 0) {
-		this->distanceSchool = 0;
+	try
+	{
+		if (distanceSchool_new <= 0) {
+			this->distanceSchool = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->distanceSchool = distanceSchool_new;
+		}
 	}
-	else {
-		this->distanceSchool = distanceSchool_new;
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (distanceHospital_new <= 0) {
-		this->distanceHospital = 0;
+	try
+	{
+		if (distanceHospital_new <= 0) {
+			this->distanceHospital = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->distanceHospital = distanceHospital_new;
+		}
 	}
-	else {
-		this->distanceHospital = distanceHospital_new;
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (distanceKindergarten_new <= 0) {
-		this->distanceKindergarten = 0;
+	try
+	{
+		if (distanceKindergarten_new <= 0) {
+			this->distanceKindergarten = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->distanceKindergarten = distanceKindergarten_new;
+		}
 	}
-	else {
-		this->distanceKindergarten = distanceKindergarten_new;
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (numHouse_new <= 0) {
-		this->numHouse = 0;
+	try
+	{
+		if (numHouse_new <= 0) {
+			this->numHouse = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->numHouse = numHouse_new;
+		}
 	}
-	else {
-		this->numHouse = numHouse_new;
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (houseStreet_new[0] != '\0') {
-		this->houseStreet = houseStreet_new;
+	try
+	{
+		if (houseStreet_new[0] != '\0') {
+			this->houseStreet = houseStreet_new;
+		}
+		else {
+			this->houseStreet = "Error";
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
 	}
-	else {
-		this->houseStreet = "Error";
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
 }
 
@@ -66,37 +119,81 @@ void location::Set(int distanceSchool_2, int distanceHospital_2, int distanceKin
 {
 	memset(&houseStreet, 0, sizeof(houseStreet));
 
-	if (distanceSchool_2 <= 0) {
-		this->distanceSchool = 0;
+	try
+	{
+		if (distanceSchool_2 <= 0) {
+			this->distanceSchool = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->distanceSchool = distanceSchool_2;
+		}
 	}
-	else {
-		this->distanceSchool = distanceSchool_2;
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (distanceHospital_2 <= 0) {
-		this->distanceHospital = 0;
+	try
+	{
+		if (distanceHospital_2 <= 0) {
+			this->distanceHospital = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->distanceHospital = distanceHospital_2;
+		}
 	}
-	else {
-		this->distanceHospital = distanceHospital_2;
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (distanceKindergarten_2 <= 0) {
-		this->distanceKindergarten = 0;
+	try
+	{
+		if (distanceKindergarten_2 <= 0) {
+			this->distanceKindergarten = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->distanceKindergarten = distanceKindergarten_2;
+		}
 	}
-	else {
-		this->distanceKindergarten = distanceKindergarten_2;
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (numHouse_2 <= 0) {
-		this->numHouse = 0;
+	try
+	{
+		if (numHouse_2 <= 0) {
+			this->numHouse = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->numHouse = numHouse_2;
+		}
 	}
-	else {
-		this->numHouse = numHouse_2;
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (houseStreet_2[0] != '\0') {
-		this->houseStreet = houseStreet_2;
+	try
+	{
+		if (houseStreet_2[0] != '\0') {
+			this->houseStreet = houseStreet_2;
+		}
+		else {
+			this->houseStreet = "Error";
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
 	}
-	else {
-		this->houseStreet = "Error";
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	
 }
 
 void location::Set_console()

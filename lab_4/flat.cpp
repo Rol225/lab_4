@@ -15,6 +15,7 @@ flat::flat(int numFlat_2)
 	this->countRoom = 0;
 	if (numFlat_2 <= 0) {
 		this->numFlat = 0;
+		throw std::exception("Ошибка присваивания значения переменной обьекта!");
 	}
 	else {
 		this->numFlat = numFlat_2;
@@ -23,46 +24,102 @@ flat::flat(int numFlat_2)
 
 flat::flat(int coin_2, int countRoom_2, int numFlat_2)
 {
-	if (coin_2 <= 0) {
-		this->coin = 0;
+	try
+	{
+		if (coin_2 <= 0) {
+			this->coin = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->coin = coin_2;
+		}
 	}
-	else {
-		this->coin = coin_2;
+	catch (const std::exception &ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (countRoom_2 <= 0) {
-		this->countRoom = 0;
+	try
+	{
+		if (countRoom_2 <= 0) {
+			this->countRoom = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->countRoom = countRoom_2;
+		}
 	}
-	else {
-		this->countRoom = countRoom_2;
+	catch (const std::exception &ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (numFlat_2 <= 0) {
-		this->numFlat = 0;
+	try
+	{
+		if (numFlat_2 <= 0) {
+			this->numFlat = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->numFlat = numFlat_2;
+		}
 	}
-	else {
-		this->numFlat = numFlat_2;
+	catch (const std::exception &ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
+	
 }
 
 void flat::Set(int coin_2, int countRoom_2, int numFlat_2)
 {
-	if (coin_2 <= 0) {
-		this->coin = 0;
+	try
+	{
+		if (coin_2 <= 0) {
+			this->coin = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->coin = coin_2;
+		}
 	}
-	else {
-		this->coin = coin_2;
+	catch (const std::exception &ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (countRoom_2 <= 0) {
-		this->countRoom = 0;
+	try
+	{
+		if (countRoom_2 <= 0) {
+			this->countRoom = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->countRoom = countRoom_2;
+		}
 	}
-	else {
-		this->countRoom = countRoom_2;
+	catch (const std::exception &ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (numFlat_2 <= 0) {
-		this->numFlat = 0;
+	try
+	{
+		if (numFlat_2 <= 0) {
+			this->numFlat = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->numFlat = numFlat_2;
+		}
 	}
-	else{
-		this->numFlat = numFlat_2;
+	catch (const std::exception &ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
+	
 }
 
 void flat::Set_console()

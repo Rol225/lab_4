@@ -15,7 +15,16 @@ house::house(street* street_new)
 {
 	this->Flat = *new flat;
 	this->Location = *new location;
-	this->Street = *street_new;
+	try
+	{
+		this->Street = *street_new;
+	}
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
+	}
+	
 	CountData();
 }
 
@@ -38,9 +47,34 @@ house& house::operator=(const house& house_new)
 
 house::house(street* street_new, flat* flat_new, location* location_new)
 {
-	this->Location = *location_new;
-	this->Flat = *flat_new;
-	this->Street = *street_new;
+	try
+	{
+		this->Location = *location_new;
+	}
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
+	}
+	try
+	{
+		this->Flat = *flat_new;
+	}
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
+	}
+	try
+	{
+		this->Street = *street_new;
+	}
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
+	}
+	
 	CountData();
 }
 
@@ -52,9 +86,34 @@ house* house::array_houses(int size)
 
 void house::Set(street *street_new, flat *flat_new, location *location_new)
 {
-	this->Location = *location_new;
-	this->Flat = *flat_new;
-	this->Street = *street_new;
+	try
+	{
+		this->Location = *location_new;
+	}
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
+	}
+	try
+	{
+		this->Flat = *flat_new;
+	}
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
+	}
+	try
+	{
+		this->Street = *street_new;
+	}
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
+	}
+
 	CountData();
 }
 
@@ -132,19 +191,29 @@ int* Int_value_location(location& location)
 	return mas;
 }
 
+
+
 void house::Print()
 {
-	int test = 0;
-	int* mas = Int_value_location(Location);
+	try
+	{
+		int* mas = Int_value_location(Location);
 
-	std::cout << "\n  Адрес: " << Location.Get_house_street() << ", дом " << mas[3] << std::endl;
-	printf("  Номер квартиры: %d\n",Flat.Get_num_flat());
-	std::cout << "  Расстояние до школы: " << mas[2] << " км" << std::endl;
-	std::cout << "  Расстояние до больницы: " << mas[1] << " км" << std::endl;
-	std::cout << "  Расстояние до детского сада: " << mas[0] << " км" << std::endl;
-	printf("  Кол-во комнат: %d\n",Flat.Get_count_room());
-	printf("  Цена: %d рублей\n", Flat.Get_coin());
-	std::cout << "  Информация о улице: " << Street.Get_street_description() << std::endl;
+		std::cout << "\n  Адрес: " << Location.Get_house_street() << ", дом " << mas[3] << std::endl;
+		printf("  Номер квартиры: %d\n", Flat.Get_num_flat());
+		std::cout << "  Расстояние до школы: " << mas[2] << " км" << std::endl;
+		std::cout << "  Расстояние до больницы: " << mas[1] << " км" << std::endl;
+		std::cout << "  Расстояние до детского сада: " << mas[0] << " км" << std::endl;
+		printf("  Кол-во комнат: %d\n", Flat.Get_count_room());
+		printf("  Цена: %d рублей\n", Flat.Get_coin());
+		std::cout << "  Информация о улице: " << Street.Get_street_description() << std::endl;
+	}
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << "Ошибка работы программы!!!" << std::endl;
+		std::cout << ex.what() << std::endl;
+	}
 }
 
 int house::CountData()

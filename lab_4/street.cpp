@@ -15,12 +15,22 @@ street::street(std::string streetName_2)
 	memset(&streetName, 0, sizeof(streetName));
 	memset(&streetDescription, 0, sizeof(streetDescription));
 	this->streetDescription = "";
-	if (streetName_2[0] != '\0') {
-		this->streetName = streetName_2;
+	try
+	{
+		if (streetName_2[0] != '\0') {
+			this->streetName = streetName_2;
+		}
+		else {
+			this->streetName = "Error";
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
 	}
-	else {
-		this->streetName = "Error";
+	catch (const std::exception &ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
+	
 }
 
 street::street(std::string streetName_new, std::string streetDescription_new)
@@ -28,33 +38,69 @@ street::street(std::string streetName_new, std::string streetDescription_new)
 	memset(&streetName, 0, sizeof(streetName));
 	memset(&streetDescription, 0, sizeof(streetDescription));
 
-	if (streetName_new[0] != '\0') {
-		this->streetName = streetName_new;
+	try
+	{
+		if (streetName_new[0] != '\0') {
+			this->streetName = streetName_new;
+		}
+		else {
+			this->streetName = "Error";
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
 	}
-	else {
-		this->streetName = "Error";
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (streetName_new[0] != '\0') {
-		this->streetDescription = streetDescription_new;
+	try
+	{
+		if (streetName_new[0] != '\0') {
+			this->streetDescription = streetDescription_new;
+		}
+		else {
+			this->streetDescription = "Error";
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
 	}
-	else {
-		this->streetDescription = "Error";
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
 }
 
 void street::Set(std::string streetName_2, std::string streetDescription_2)
 {
-	if (streetName_2[0] != '\0') {
-		this->streetName = streetName_2;
+	try
+	{
+		if (streetName_2[0] != '\0') {
+			this->streetName = streetName_2;
+		}
+		else {
+			this->streetName = "Error";
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
 	}
-	else {
-		this->streetName = "Error";
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
-	if (streetName_2[0] != '\0') {
-		this->streetDescription = streetDescription_2;
+	try
+	{
+		if (streetName_2[0] != '\0') {
+			this->streetDescription = streetDescription_2;
+		}
+		else {
+			this->streetDescription = "Error";
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
 	}
-	else {
-		this->streetDescription = "Error";
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
 }
 
