@@ -9,3 +9,4 @@ void FunckForFlat();
 void FunckForStreet();
 void FunckForHouse();
 void FunckForHouses();
+void InitAndCoppyHouse();

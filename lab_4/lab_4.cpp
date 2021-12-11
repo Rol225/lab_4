@@ -7,14 +7,13 @@
 int main()
 {
 	//Подключение Русского языка
-	//SetConsoleCP(1251);
-	//SetConsoleOutputCP(1251);
-	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 
 	int option = 0;
 
 	do {
-		printf("  1) Класс location\n  2) Класс flat\n  3) Класс street\n  4) Класс house\n  5) Массив обьектов класса houses\n  6) Выход\n");
+		printf("  1) Класс location\n  2) Класс flat\n  3) Класс street\n  4) Класс house\n  5) Массив обьектов класса houses\n  6) Конструктор 3-х эелементов house\n  7) Выход\n");
 		printf("Выберите действие: ");
 		do {
 			while (scanf("%d", &option) != 1) {
@@ -24,7 +23,7 @@ int main()
 			if (option > 5) {
 				printf("\nОшибка. выбирете из допустимых значений: ");
 			}
-		} while (option > 5 || option <= 0);
+		} while (option > 7 || option <= 0);
 
 		if (option == 1) {
 			FunckForLocation();
@@ -41,7 +40,10 @@ int main()
 		else if (option == 5) {
 			FunckForHouses();
 		}
-	} while (option != 6);
+		else if (option == 6) {
+			InitAndCoppyHouse();
+		}
+	} while (option != 7);
 }
 
 void FunckForLocation() {
@@ -333,6 +335,25 @@ void FunckForHouses() {
 	get_house(array, index).Set_console();
 	printf("\n\n  Результат: ");
 	array[index].Print();
+	printf("\n\n");
+	delete[] array;
+}
+
+void InitAndCoppyHouse() {
+	int size = 3;
+	street* street_new = new street;
+	printf("\n\n  Конструктор 3-х эелементов массива обьектов house с одним параметором:\n");
+	house* array = new house[size];
+	array->array_houses(size);
+	for (int i = 0; i < size; i++) {
+		street_new->Set_console();
+		house* House = new house(street_new);
+		array[i] = *House;
+	}
+	printf("\n\n  Все созданные дома: ");
+	for (int i = 0; i < size; i++) {
+		array[i].Print();
+	}
 	printf("\n\n");
 	delete[] array;
 }
