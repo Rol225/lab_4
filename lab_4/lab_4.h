@@ -10,3 +10,4 @@ void FunckForStreet();
 void FunckForHouse();
 void FunckForHouses();
 void InitAndCoppyHouse();
+void TwodimensionalArrayFlats();

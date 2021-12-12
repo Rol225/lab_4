@@ -13,17 +13,17 @@ int main()
 	int option = 0;
 
 	do {
-		printf("  1) Класс location\n  2) Класс flat\n  3) Класс street\n  4) Класс house\n  5) Массив обьектов класса houses\n  6) Конструктор 3-х эелементов house\n  7) Выход\n");
+		printf("  1) Класс location\n  2) Класс flat\n  3) Класс street\n  4) Класс house\n  5) Массив обьектов класса houses\n  6) Конструктор 3-х эелементов house\n  7) 2-x мерный массив объектов flat\n  8) Выход\n");
 		printf("Выберите действие: ");
 		do {
 			while (scanf("%d", &option) != 1) {
 				while (getchar() != '\n');
 				printf("Ошибка. Введите число: ");
 			}
-			if (option > 5) {
+			if (option > 8 || option <=0) {
 				printf("\nОшибка. выбирете из допустимых значений: ");
 			}
-		} while (option > 7 || option <= 0);
+		} while (option > 8 || option <= 0);
 
 		if (option == 1) {
 			FunckForLocation();
@@ -43,7 +43,10 @@ int main()
 		else if (option == 6) {
 			InitAndCoppyHouse();
 		}
-	} while (option != 7);
+		else if (option == 7) {
+			TwodimensionalArrayFlats();
+		}
+	} while (option != 8);
 }
 
 void FunckForLocation() {
@@ -356,4 +359,41 @@ void InitAndCoppyHouse() {
 	}
 	printf("\n\n");
 	delete[] array;
+}
+
+void TwodimensionalArrayFlats() {
+	int size, size_2;
+
+	printf("\n\n  Введите размерность основного массива: ");
+	while (scanf("%d", &size) != 1) {
+		while (getchar() != '\n');
+		printf("Ошибка. Введите число: ");
+	}
+	printf("\n  Введите размерность дочерних массивов: ");
+	while (scanf("%d", &size_2) != 1) {
+		while (getchar() != '\n');
+		printf("Ошибка. Введите число: ");
+	}
+
+	flat** Flats = new flat * [size];
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < size_2; j++) {
+			Flats[i] = new flat[size_2];
+		}
+	}
+	printf("\n\n  Введите значения: ");
+	for (int i = 0; i < size; i++) {
+		printf("\n");
+		for (int j = 0; j < size_2; j++) {
+			Flats[i][j].Set_console();
+		}
+	}
+	printf("\n\n  Ваши данные: ");
+	for (int i = 0; i < size; i++) {
+		printf("\n");
+		for (int j = 0; j < size_2; j++) {
+			Flats[i][j].Print();
+		}
+	}
+	printf("\n");
 }

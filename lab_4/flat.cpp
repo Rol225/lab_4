@@ -13,12 +13,20 @@ flat::flat(int numFlat_2)
 {
 	this->coin = 0;
 	this->countRoom = 0;
-	if (numFlat_2 <= 0) {
-		this->numFlat = 0;
-		throw std::exception("Ошибка присваивания значения переменной обьекта!");
+	try
+	{
+		if (numFlat_2 <= 0) {
+			this->numFlat = 0;
+			throw std::exception("Ошибка присваивания значения переменной обьекта!");
+		}
+		else {
+			this->numFlat = numFlat_2;
+		}
 	}
-	else {
-		this->numFlat = numFlat_2;
+	catch (const std::exception& ex)
+	{
+		std::cout << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
 }
 
